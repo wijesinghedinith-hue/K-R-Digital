@@ -7,11 +7,11 @@ import { z } from "zod";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — K&R Digital Creations" },
+      { title: "Contact  K&R Digital Creations" },
       {
         name: "description",
         content:
-          "Get in touch with Sachintha Lakshan. Phone, WhatsApp, or send a message — replies within 24 hours.",
+          "Get in touch with Sachintha Lakshan. Phone, WhatsApp, or send a message  replies within 24 hours.",
       },
     ],
   }),
@@ -79,7 +79,7 @@ Sent from K&R Digital Creations Website
         <SectionHeading
           eyebrow="Contact"
           title="Let's Make Something Memorable"
-          subtitle="Reach out via WhatsApp, call, or message — fast replies."
+          subtitle="Reach out via WhatsApp, call, or message  fast replies."
         />
 
         <div className="grid lg:grid-cols-5 gap-8">

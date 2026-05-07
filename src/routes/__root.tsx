@@ -31,7 +31,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "K&R Digital Creations — Premium Video Editing" },
+      { title: "K&R Digital Creations  Premium Video Editing" },
       { name: "description", content: "Professional social media & YouTube video editing by Sachintha Lakshan. Captures attention. Drives engagement." },
       { name: "author", content: "K&R Digital Creations (PVT) LTD" },
       { property: "og:title", content: "K&R Digital Creations — Premium Video Editing" },

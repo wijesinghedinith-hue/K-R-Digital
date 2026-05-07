@@ -2,16 +2,14 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ArrowRight } from "lucide-react";
 
-// 1. Import your profile image here
-// Make sure the file exists at src/assets/profile.jpg
 import profileImg from "@/assets/profile.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Sachintha Lakshan | K&R Digital Creations" },
-      { name: "description", content: "Meet Sachintha Lakshan, founder of K&R Digital Creations — a video editor passionate about storytelling, social media, and YouTube content." },
-      { property: "og:title", content: "About — Sachintha Lakshan" },
+      { title: "About  Sachintha Lakshan | K&R Digital Creations" },
+      { name: "description", content: "Meet Sachintha Lakshan, founder of K&R Digital Creations  a video editor passionate about storytelling, social media, and YouTube content." },
+      { property: "og:title", content: "About  Sachintha Lakshan" },
       { property: "og:description", content: "A storyteller behind the timeline." },
     ],
   }),
@@ -49,7 +47,7 @@ function AboutPage() {
           <div className="lg:col-span-3 space-y-6 animate-fade-up" style={{ animationDelay: "120ms" }}>
             <p className="text-lg leading-relaxed text-foreground/90">
               I'm <span className="text-gold font-medium">Sachintha Lakshan</span>, founder of K&amp;R Digital Creations.
-              For over a year I've been crafting videos that don't just look good — they perform.
+              For over a year I've been crafting videos that don't just look good  they perform.
             </p>
             <p className="text-base leading-relaxed text-muted-foreground">
               My focus lives at the intersection of <span className="text-foreground">social media editing</span> and
@@ -57,7 +55,7 @@ function AboutPage() {
               or a 12-minute talking-head episode, I treat every edit as a story waiting to be sharpened.
             </p>
             <p className="text-base leading-relaxed text-muted-foreground">
-              I believe great editing is invisible — it carries the viewer from the first frame to the last without
+              I believe great editing is invisible  it carries the viewer from the first frame to the last without
               ever giving them a reason to scroll. That's the standard I bring to every project.
             </p>
 

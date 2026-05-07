@@ -5,8 +5,8 @@ import { Sparkles, Clock, Award, HeartHandshake, ArrowRight } from "lucide-react
 export const Route = createFileRoute("/why")({
   head: () => ({
     meta: [
-      { title: "Why Choose Me — K&R Digital Creations" },
-      { name: "description", content: "Creative, fast, high-quality, client-focused video editing — here's why creators and brands choose K&R Digital Creations." },
+      { title: "Why Choose Me  K&R Digital Creations" },
+      { name: "description", content: "Creative, fast, high-quality, client-focused video editing  here's why creators and brands choose K&R Digital Creations." },
       { property: "og:title", content: "Why Choose K&R Digital Creations" },
       { property: "og:description", content: "Creative, fast, premium, client-first." },
     ],
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/why")({
 const reasons = [
   { icon: Sparkles, title: "Creative & Trend-Aware", text: "Edits that ride the algorithm without losing your brand voice." },
   { icon: Clock, title: "Fast Delivery", text: "Reliable turnarounds so your content never misses its moment." },
-  { icon: Award, title: "High-Quality Output", text: "Color, sound, motion — every layer polished to a premium finish." },
+  { icon: Award, title: "High-Quality Output", text: "Color, sound, motion  every layer polished to a premium finish." },
   { icon: HeartHandshake, title: "Client-Focused Approach", text: "Clear communication, generous revisions, your vision honored." },
 ];
 

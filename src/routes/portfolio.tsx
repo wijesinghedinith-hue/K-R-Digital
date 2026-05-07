@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/SectionHeading";
-import { Play, TrendingUp } from "lucide-react";
+import { TrendingUp, ExternalLink } from "lucide-react";
 
 // Import videos
 import v1 from "@/assets/1.mp4";
@@ -14,6 +14,7 @@ import v8 from "@/assets/8.mp4";
 import v9 from "@/assets/9.mp4";
 import v10 from "@/assets/10.mp4";
 import v11 from "@/assets/11.mp4";
+import v22 from "@/assets/2.2.mp4";
 
 export const Route = createFileRoute("/portfolio")({
   component: PortfolioPage,
@@ -23,21 +24,46 @@ type Item = {
   video: string;
   platform: "Instagram" | "TikTok";
   label: string;
+  link: string; // ✅ NEW
   featured?: boolean;
 };
 
 const items: Item[] = [
-  { video: v1, platform: "Instagram", label: "Reel · Reignite", featured: true },
-  { video: v2, platform: "TikTok", label: "TikTok · Rough clothing edit" },
-  { video: v3, platform: "TikTok", label: "TikTok · Rough clothing edit " },
-  { video: v4, platform: "TikTok", label: "TikTok ·Reignite "},
-  { video: v5, platform: "TikTok", label: "TikTok ·Rough clothing edit " },
-  { video: v6, platform: "TikTok", label: "TikTok · Rough clothing edit " },
-  { video: v7, platform: "TikTok", label: "TikTok · Rough clothing edit " },
-  { video: v8, platform: "TikTok", label: "TikTok · Rough clothing edit " },
-  { video: v9, platform: "TikTok", label: "TikTok · Rough clothing edit " },
-  { video: v10, platform: "TikTok", label: "Rough clothing edit " },
-  { video: v11, platform: "TikTok", label: "Rough clothing edit " },
+  {
+    video: v1,
+    platform: "Instagram",
+    label: "Reel · Reignite",
+    featured: true,
+    link: "https://www.instagram.com/reel/DVJRXhaD22E/?igsh=eGo1MnRzdDM3dDk=",
+  },
+
+  {
+    video: v22,
+    platform: "Instagram",
+    label: "Reel · Reignite",
+    featured: true,
+    link: "https://www.instagram.com/reel/DW82mg-D5AT/?igsh=cnNqM2RnYWJlOXAw",
+  },
+
+  { video: v2, platform: "TikTok", label: "Edit", link: "https://vt.tiktok.com/ZS9PeHLkP/" },
+  { video: v3, platform: "TikTok", label: "Edit", link: "https://vt.tiktok.com/ZS9Pek8wY/" },
+  { video: v4, platform: "TikTok", label: "Edit", link: "https://vt.tiktok.com/ZS9PRNaaf/" },
+  { video: v5, platform: "TikTok", label: "Edit", link: "https://vt.tiktok.com/ZS9PRDyTL/" },
+  { video: v6, platform: "TikTok", label: "Edit", link: "https://vt.tiktok.com/ZS9PdXrGh/" },
+
+  {
+    video: v22,
+    platform: "Instagram",
+    label: "Reel · Reignite",
+    featured: true,
+    link: "https://www.instagram.com/reel/DW82mg-D5AT/?igsh=cnNqM2RnYWJlOXAw",
+  },
+
+  { video: v7, platform: "TikTok", label: "Edit", link: "https://vt.tiktok.com/ZS9PeBMKx/" },
+  { video: v8, platform: "TikTok", label: "Edit", link: "https://vt.tiktok.com/ZS9PduEm8/" },
+  { video: v9, platform: "TikTok", label: "Edit", link: "https://vt.tiktok.com/ZS9PdDqLC/" },
+  { video: v10, platform: "TikTok", label: "Edit", link: "https://vt.tiktok.com/ZS9PdDkcA/" },
+  { video: v11, platform: "TikTok", label: "Edit", link: "https://vt.tiktok.com/ZS9PdPTKR/" },
 ];
 
 function PortfolioPage() {
@@ -51,80 +77,57 @@ function PortfolioPage() {
         />
 
         {/* Highlight */}
-        <div className="mb-14 p-8 md:p-10 rounded-3xl glass border border-gold/40 flex flex-col md:flex-row items-center gap-6 md:gap-10 animate-fade-up shadow-gold">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-gold flex items-center justify-center text-primary-foreground shrink-0">
+        <div className="mb-14 p-8 rounded-3xl glass border border-gold/40 flex items-center gap-6 shadow-gold">
+          <div className="w-16 h-16 rounded-2xl bg-gradient-gold flex items-center justify-center text-primary-foreground">
             <TrendingUp size={28} />
           </div>
-          <div className="flex-1 text-center md:text-left">
-            <p className="text-xs uppercase tracking-[0.25em] text-gold mb-1">
-              Highlight
-            </p>
-            <h3 className="font-display text-2xl md:text-3xl">
-              Video reached{" "}
-              <span className="text-gradient-gold font-bold">
-                200,000+ views
-              </span>
-            </h3>
-          </div>
+          <h3 className="font-display text-2xl">
+            Video reached <span className="text-gradient-gold font-bold">200,000+ views</span>
+          </h3>
         </div>
 
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((item, i) => (
             <div
-              key={item.video}
+              key={item.video + i}
               onClick={(e) => {
                 const video = e.currentTarget.querySelector("video") as HTMLVideoElement;
                 if (!video) return;
-
-                if (video.paused) {
-                  video.play();
-                } else {
-                  video.pause();
-                }
+                video.paused ? video.play() : video.pause();
               }}
-              className={`group relative aspect-[9/16] rounded-2xl overflow-hidden border border-border hover:border-gold/60 transition-all duration-500 hover-lift animate-fade-up cursor-pointer ${
-                item.featured ? "ring-1 ring-gold/50" : ""
-              }`}
-              style={{ animationDelay: `${i * 60}ms` }}
+              className="group relative aspect-[9/16] rounded-2xl overflow-hidden border hover:border-gold/60 transition cursor-pointer"
             >
               {/* Video */}
               <video
                 src={item.video}
                 className="absolute inset-0 w-full h-full object-cover"
-                //muted
                 loop
                 playsInline
-                preload="metadata"
-                onMouseEnter={(e) => e.currentTarget.play()}
-                onMouseLeave={(e) => {
-                  e.currentTarget.pause();
-                  e.currentTarget.currentTime = 0;
-                }}
               />
 
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 opacity-30 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
 
-              {/* Platform badge */}
-              <div className="absolute top-4 left-4 glass border border-border/60 rounded-full px-3 py-1 text-[10px] uppercase tracking-widest text-foreground/90 pointer-events-none">
+              {/* Platform */}
+              <div className="absolute top-3 left-3 text-xs bg-black/60 px-2 py-1 rounded pointer-events-none">
                 {item.platform}
               </div>
 
-              {/* Featured badge */}
-              {item.featured && (
-                <div className="absolute top-4 right-4 bg-gradient-gold text-primary-foreground rounded-full px-3 py-1 text-[10px] uppercase tracking-widest font-semibold pointer-events-none">
-                  Featured
-                </div>
-              )}
+              {/* 🔗 BUTTON */}
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="absolute bottom-14 right-3 z-10 flex items-center gap-1 px-3 py-1.5 text-xs rounded-full bg-black/70 text-white hover:bg-gold hover:text-black transition"
+              >
+                View <ExternalLink size={12} />
+              </a>
 
-              
-
-              {/* Bottom text */}
-              <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none">
-                <p className="font-display text-base text-foreground">
-                  {item.label}
-                </p>
+              {/* Label */}
+              <div className="absolute bottom-0 p-4 text-sm pointer-events-none">
+                {item.label}
               </div>
             </div>
           ))}

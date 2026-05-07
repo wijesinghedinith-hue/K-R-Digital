@@ -5,8 +5,8 @@ import { Smartphone, Youtube, Wand2, Check, ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Video Editing for Social & YouTube | K&R Digital" },
-      { name: "description", content: "Social media editing, YouTube video editing, and content optimization — built to capture attention and drive engagement." },
+      { title: "Services  Video Editing for Social & YouTube | K&R Digital" },
+      { name: "description", content: "Social media editing, YouTube video editing, and content optimization  built to capture attention and drive engagement." },
       { property: "og:title", content: "Services | K&R Digital Creations" },
       { property: "og:description", content: "Social media, YouTube, and content optimization editing services." },
     ],
@@ -18,19 +18,19 @@ const services = [
   {
     icon: Smartphone,
     title: "Social Media Editing",
-    desc: "Vertical edits engineered for the scroll — TikTok, Instagram Reels, and YouTube Shorts.",
+    desc: "Vertical edits engineered for the scroll  TikTok, Instagram Reels, and YouTube Shorts.",
     points: ["Hook-first storytelling", "Trend-aware transitions", "Captions & sound design", "Vertical 9:16 mastered"],
   },
   {
     icon: Youtube,
     title: "YouTube Video Editing",
-    desc: "Long-form edits that retain viewers — vlogs, tutorials, and talking-head content.",
+    desc: "Long-form edits that retain viewers  vlogs, tutorials, and talking-head content.",
     points: ["Pacing & retention edits", "B-roll integration", "Color & audio polish", "Thumbnails on request"],
   },
   {
     icon: Wand2,
     title: "Content Optimization",
-    desc: "The polish layer — captions, hooks, sound effects, and motion that lift performance.",
+    desc: "The polish layer  captions, hooks, sound effects, and motion that lift performance.",
     points: ["Auto + styled captions", "Custom hook design", "SFX & music curation", "Motion graphics"],
   },
 ];
@@ -42,7 +42,7 @@ function ServicesPage() {
         <SectionHeading
           eyebrow="Services"
           title="Built to Captivate. Engineered to Convert."
-          subtitle="Three focused offerings — each crafted to move your content from forgettable to unmissable."
+          subtitle="Three focused offerings  each crafted to move your content from forgettable to unmissable."
         />
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -77,7 +77,7 @@ function ServicesPage() {
           <div className="relative">
             <h3 className="font-display text-3xl md:text-4xl">Have a project in mind?</h3>
             <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-              Tell me about your content goals — I'll respond within 24 hours with a tailored plan.
+              Tell me about your content goals  I'll respond within 24 hours with a tailored plan.
             </p>
             <Link
               to="/contact"
